@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Pass phraseby</title>
+        <h1>"Pass phraseby"</h1>
+        <h1>Mahima chowdary Byrapuneni</h1>
+    </head>
+    <body>
+        <from>
+            <label for="form_secret">Enter the secret phrase</label>
+            <input type="password" value="Let me in" id="form_secret"><br><br>
+        
+            <label for="from_phrase">Enter a phrase</label>
+            <input type="text" id="from_phrase"><br><br>
+        
+            <input type="button" onclick="processPhrase()" value="Check the phrase">
+        </from>
+        
+        
+        <p id="result">correct: 0 wrong: 0</p>
+            <script>
+                correct = 0
+                wrong = 0
+                function processPhrase() {
+                    console.log("Getting form values")
+                    secret = document.getElementById("form_secret").value
+                    phrase = document.getElementById("from_phrase").value
+                    out = document.getElementById("result")
+                    if (secret == phrase) {
+                        correct = correct + 1
+                        alert("Access allowed")
+                    }
+                    else {
+                        wrong = wrong + 1
+                        alert("Access denied")
+                    }
+                    out.innerHTML = "correct: " + correct + "  wrong: " + wrong;
+        
+                }
+            </script>
+          
+            <h2>Parrots</h2>
+<p id="result">The image is about beatiful parrort</p>
+<br>
+    <script> 
+        var correct = 0
+        var wrong = 0
+        
+        
+        function processPhrase (){
+            console.log("Getting form values")
+            secret = document.getElementById("form1_secret").value
+            guess = document.getElementById("form1_guess").value
+            
+            //confirmed = confirm("Are these the values? "+secret+" and "+guess)
+             //result = secret.localeCompare(guess);
+            out = document.getElementById("result")
+            
+            if(secret == guess){
+                correct ++
+                alert("Access allowed!")
+                out.innerHTML = "correct score"+correct
+            } else {
+                wrong++
+                alert ("Access denied!")
+                out.innerHTML ="wrong score"+ wrong
+            }
+            out.innerHTML = "correct count"+ correct +" ; wrong count "+ wrong
+        }
+        </script>
+        <div class ="container">
+            <img src ="download5.jpg" width="200" height="200"  onclick="newImage()" id="image" >
+            <br>
+            <!-- <input type="button" onclick="rotateImage()" id="image"> -->
+            <script>
+                var usingImage = 1
+                function newImage(){
+                    switch(usingImage ){
+                        case 1:
+                          //  var img = document.createElement("img")
+                            //img.src = "download5.jpg"
+                            document.getElementById("image").src = "download5.jpg"
+                            usingImage = 2
+                            break
+                        case 2:
+                            //var img1 = document.createElement("img1")
+                            //img1.src = "download2.jpg"
+                            document.getElementById("image").src = "download2.jpg"
+                            usingImage = 3
+                            break
+                        case 3:
+                            document.getElementById("image").src = "download4.jpg"
+                            usingImage = 1
+                            break
+                        }
+        
+                }
+            </script>
+        
+        </div>
+    </body>
+</html>
