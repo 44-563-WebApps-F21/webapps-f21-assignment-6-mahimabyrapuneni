@@ -1,0 +1,107 @@
+<html>
+    <title>arithmetic</title>
+    <h2>Mahima Byrapuneni “ computes”.</h2>
+
+    
+    <h2>Getting input</h2>
+
+    <form>
+        <label for="form1_num">Enter a Base</label>
+        <input type="number" id="form1_num" name="form1_num" value="10"> <br>
+
+        <label for="form1_exp">Enter exponent </label>
+        <input type="number" id="form1_exp" name="form1_exp" value="2"> <br>
+
+        <input type="button" onclick="powers()" value="compute">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+
+        function powers() {
+            console.log("Getting form values")
+            num = document.getElementById("form1_num").value
+            exp = document.getElementById("form1_exp").value
+            // confirmed = confirm("Are these the values? "+age+" and "+nick)
+            let result = " "
+            out = document.getElementById("result")
+            let i = 1
+            for (i = 1; i <= exp; i++) {
+
+                result += Math.pow(num, i) + " "
+
+                out.innerHTML = " powers of " + num + " are :" + result
+                // console.log(result)
+            }
+
+
+        }
+    </script>
+    <form>
+        <input type="radio" id="rb_plus" name="color" value="plus" checked onclick="processRadio()">
+        <label for="rb_plus">+</label></br>
+
+        <input type="radio" id="rb_minus" name="color" value="minus"onclick="processRadio()">
+        <label for="rb_minus">-</label></br>
+
+        <input type="radio" id="rb_times" name="color" value="times" onclick="processRadio()">
+        <label for="rb_times">*</label></br>
+        <input type="radio" id="rb_divide" name="color" value="divide" onclick="processRadio()" >
+        <label for="rb_divide">/</label></br>
+
+
+        <!-- <input type="button" onclick="processRadio()" value="Get values from radio group"> -->
+    </form>
+    <p id="arithematic">This text will be replaced </p>
+    <script>
+        function processRadio() {
+            
+            num1 = document.getElementById("form1_num").value
+            num2 = document.getElementById("form1_exp").value
+
+            var result = 0
+            plus = document.getElementById("rb_plus").checked
+            minus = document.getElementById("rb_minus").checked
+            times = document.getElementById("rb_times").checked
+            divide = document.getElementById("rb_divide").checked
+            out = document.getElementById("arithematic")
+
+            if (plus) {
+                //result = 0
+                result = +num1 + +num2
+                //document.getElementById("arithematic").innerHTML = "The sum of " + num1 + " and " + num2 + " is : " + result
+                out.innerHTML = "The sum of "+num1+" and "+num2+" is : "+result
+            }
+            else if (minus) {
+                //result = 0;
+                result = num1 - num2
+                //document.getElementById("arithmetic").innerHTML = "The difference of " + num1 + " and " + num2 + " is : " + result
+                out.innerHTML = "The difference of "+num1+" and "+num2+" is : "+result
+            }
+            else if (times) {
+                //result = 0;
+                result = num1 * num2
+                //document.getElementById("arithmetic").innerHTML = "The product of " + num1 + " and " + num2 + " is : " + result
+                out.innerHTML = "The product of "+num1+" and "+num2+" is : "+result
+            }
+            else if (divide) {
+               // result = 0;
+                result = num1 / num2
+                //document.getElementById("arithmetic").innerHTML = "The division  of " + num1 + " and " + num2 + " is : " + result
+                out.innerHTML = "The divison  of "+num1+" and "+num2+" is : "+result
+            }
+            //out.innerHTML = "The divison of "+num1+" and "+num2+" is : "+result
+
+
+        }
+    </script>
+    
+
+
+
+
+
+</body>
+</html>
