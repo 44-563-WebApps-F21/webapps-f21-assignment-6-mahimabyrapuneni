@@ -66,6 +66,25 @@
             }
             out.innerHTML = "correct count"+ correct +" ; wrong count "+ wrong
         }
+
+        let usingImage = 1
+        function newImage() {
+            switch (usingImage) {
+                case 1:
+                    document.getElementById("Images").src = "images/giraffe.jpg"
+                    usingImage++;
+                    break;
+                case 2:
+                    document.getElementById("Images").src = "images/impala.jpg"
+                    usingImage++;
+                    break;
+                default:
+                    usingImage = 1;
+                    document.getElementById("Images").src = "images/urchin.jpg"
+                    break;
+            }
+        }
+        
         </script>
         <div class ="container">
             <img src ="download5.jpg" width="200" height="200"  onclick="newImage()" id="image" >
